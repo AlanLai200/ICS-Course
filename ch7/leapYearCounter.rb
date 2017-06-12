@@ -1,5 +1,3 @@
-ayear = " "
-byear = " "
 puts "What year is that start year?"
 ayear = gets.chomp
 puts "What year is the end year?"
