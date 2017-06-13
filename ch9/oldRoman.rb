@@ -58,5 +58,5 @@ while true
     end
   end
 end
-puts "I have converted your number into roman numberal!"
+puts "I have converted your number into old roman numberal!"
 puts roman.join

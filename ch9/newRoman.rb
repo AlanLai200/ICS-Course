@@ -1,4 +1,4 @@
-puts "Please enter a number and I will return the old school roman numeral!"
+puts "Please enter a number and I will return the new school roman numeral!"
 number = gets.chomp.to_i
 convert = ""
 mvar=""
@@ -70,5 +70,5 @@ while true
     end
   end
 end
-puts "I have converted your number into roman numberal!"
+puts "I have converted your number into new roman numberal!"
 puts roman.join
