@@ -1,4 +1,4 @@
-puts "Please enter a number and I will return the new school roman numeral!"
+puts "Please enter a number and I will return the old school roman numeral!"
 number = gets.chomp.to_i
 convert = ""
 mvar=""
@@ -13,53 +13,77 @@ while true
     roman.push convert
     number = number.to_i - 1000*mvar
   else
-    if number.to_i >= 500
-      convert = "D"
+    if number.to_i >= 900
+      convert = "CM"
       roman.push convert
-      number = number.to_i - 500
+      number = number.to_i - 900
     else
-      if number.to_i >= 100
-        cvar=number.to_i/100
-        convert = "C"*cvar.to_i
+      if number.to_i >= 500
+        convert = "D"
         roman.push convert
-        number = number.to_i - 100*cvar.to_i
+        number = number.to_i - 500
       else
-        if number.to_i >= 50
-          convert = "L"
+        if number.to_i >= 400
+          convert = "CD"
           roman.push convert
-          number = number.to_i - 50
+          number = number.to_i - 400
         else
-          if number.to_i >= 10
-            xvar = number.to_i/10
-            convert = "X"*xvar
+          if number.to_i >= 100
+            cvar=number.to_i/100
+            convert = "C"*cvar.to_i
             roman.push convert
-            number = number.to_i - 10*xvar.to_i
+            number = number.to_i - 100*cvar.to_i
           else
-            if number.to_i == 9
-              convert = "IX"
+            if number.to_i >= 90
+              convert = "XC"
               roman.push convert
-              break
+              number = number.to_i - 90
             else
-              if number.to_i >=6 && number.to_i < 9
-                revar= number.to_i%5
-                convert = "V" + "I"*revar
+              if number.to_i >= 50
+                convert = "L"
                 roman.push convert
-                break
+                number = number.to_i - 50
               else
-                if number.to_i == 5
-                  convert = "V"
+                if number.to_i >= 40
+                  convert = "XL"
                   roman.push convert
-                  break
+                  number = number.to_i - 40
                 else
-                  if number.to_i == 4
-                    convert = "IV"
+                  if number.to_i >= 10
+                    xvar = number.to_i/10
+                    convert = "X"*xvar
                     roman.push convert
-                    break
+                    number = number.to_i - 10*xvar.to_i
                   else
-                    number.to_i <=3
-                    convert = "I"*number.to_i
-                    roman.push convert
-                    break
+                    if number.to_i == 9
+                      convert = "IX"
+                      roman.push convert
+                      break
+                    else
+                      if number.to_i >=6 && number.to_i < 9
+                        revar= number.to_i%5
+                        convert = "V" + "I"*revar
+                        roman.push convert
+                        break
+                      else
+                        if number.to_i == 5
+                          convert = "V"
+                          roman.push convert
+                          break
+                        else
+                          if number.to_i == 4
+                            convert = "IV"
+                            roman.push convert
+                            break
+                          else
+                            number.to_i <=3
+                            convert = "I"*number.to_i
+                            roman.push convert
+                            break
+                          end
+                        end
+                      end
+                    end
                   end
                 end
               end
@@ -70,5 +94,6 @@ while true
     end
   end
 end
-puts "I have converted your number into new roman numberal!"
+
+puts "I have converted your number into roman numberal!"
 puts roman.join
